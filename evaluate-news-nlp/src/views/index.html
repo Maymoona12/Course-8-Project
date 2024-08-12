@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluate News Article</title>
+</head>
+<body>
+    <header>
+        <h1>Evaluate a News Article with NLP</h1>
+    </header>
+    <main>
+        <form id="form">
+            <label for="url">Enter the URL of the article:</label>
+            <input type="text" id="url" name="url" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 NLP News Evaluator</p>
+    </footer>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
